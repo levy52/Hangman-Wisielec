@@ -1,4 +1,5 @@
-var password = "Chłopaki nie płaczą".toUpperCase();
+var passwords = ['Chłopaki nie płaczą','Poranek kojota','Czterej pancerni i pies','Odwróceni'];
+var password = passwords[Math.floor(Math.random()*passwords.length)].toUpperCase();
 var distance = password.length;
 var fail = 0;
 var yes = new Audio("audio/yes.wav");
