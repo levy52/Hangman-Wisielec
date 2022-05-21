@@ -4,6 +4,11 @@ body {
     font-size: 28px;
     font-family: 'Inconsolata', monospace;
     font-weight: bold;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 #container {
@@ -60,3 +65,18 @@ body {
 .reset:hover {
     color: white;
 }
+
+.letter.background-yes {
+    background-color: #003300;
+    color: #00C000;
+    border: 3px solid #00C000;
+    cursor: default;
+}
+
+.letter.background-no {
+    background-color: #330000;
+    color: #C00000;
+    border: 3px solid #C00000;
+    cursor: default;
+}
+

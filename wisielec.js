@@ -1,6 +1,4 @@
-var password = "Chłopaki nie płaczą";
-password = password.toUpperCase();
-
+var password = "Chłopaki nie płaczą".toUpperCase();
 var distance = password.length;
 var fail = 0;
 var yes = new Audio("audio/yes.wav");
@@ -53,19 +51,14 @@ function check(nr) {
     if (hit == true) {
         yes.play();
         var element = "let" + nr;
-        document.getElementById(element).style.background = "#003300";
-        document.getElementById(element).style.color = "#00C000";
-        document.getElementById(element).style.border = "3px solid #00C000";
-        document.getElementById(element).style.cursor = "default";
+        document.getElementById(element).classList.add("background-yes");
+        document.getElementById(element).setAttribute("onclick", ";");
         write_password();
     }
     else {
         no.play();
         var element = "let" + nr;
-        document.getElementById(element).style.background = "#330000";
-        document.getElementById(element).style.color = "#C00000";
-        document.getElementById(element).style.border = "3px solid #C00000";
-        document.getElementById(element).style.cursor = "default";
+        document.getElementById(element).classList.add("background-no");
         document.getElementById(element).setAttribute("onclick", ";");
 
         //fail
