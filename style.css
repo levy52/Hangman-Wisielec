@@ -4,11 +4,16 @@ body {
     font-size: 28px;
     font-family: 'Inconsolata', monospace;
     font-weight: bold;
-    user-select: none; /* supported by Chrome and Opera */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    /* supported by Chrome and Opera */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
 }
 
 #container {
@@ -32,10 +37,16 @@ body {
 }
 
 #alphabet {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
     float: left;
     width: 450px;
     text-align: center;
     min-height: 280px;
+}
+
+#alphabet.no-grid {
+    display: block;
 }
 
 .letter {
@@ -56,16 +67,6 @@ body {
     border: 3px solid white;
 }
 
-.reset {
-    color: green;
-    cursor: pointer;
-    font-size: 48px;
-}
-
-.reset:hover {
-    color: white;
-}
-
 .letter.background-yes {
     background-color: #003300;
     color: #00C000;
@@ -80,3 +81,46 @@ body {
     cursor: default;
 }
 
+.reset {
+    color: green;
+    cursor: pointer;
+    font-size: 48px;
+}
+
+.reset:hover {
+    color: white;
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+
+    #board {
+        width: 100%;
+        font-size: 7vw;
+        margin: 0 auto;
+    }
+    #container,
+    #hangman{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+        float: none;
+        min-height: unset;
+    }
+    #hangman img,
+    #alphabet,
+    .reset {
+        width: 100%;
+        font-size: 7vw;
+        margin-bottom: 10px;
+        min-height: unset;
+    }
+    .letter {
+        width: auto;
+        height: auto;
+        font-size: large; 
+    }
+    
+}

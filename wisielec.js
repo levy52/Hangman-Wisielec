@@ -25,8 +25,7 @@ function start() {
     for (i = 0; i <= 34; i++) {
         var element = "let" + i;
         content = content + '<div class="letter" onclick="check(' + i + ')" id="' + element + '">' + letters[i] + '</div>';
-        if ((i + 1) % 7 == 0) content = content + '<div style="clear:both;"></div>'
-    }
+        }
 
     document.getElementById("alphabet").innerHTML = content;
 
@@ -70,10 +69,14 @@ function check(nr) {
     }
 
     //winner
-    if (password == password1)
-        document.getElementById("alphabet").innerHTML = "Tak jest!<br/> Podane hasło jest prawidłowe:<br/>" + password + '<br/><br/><span class="reset" onclick="location.reload()">Grasz jeszcze raz?</span>'
+    if (password == password1) {
+        document.getElementById("alphabet").innerHTML = "Tak jest!<br/> Podane hasło jest prawidłowe:<br/>" + password + '<br/><br/><span class="reset" onclick="location.reload()">Grasz jeszcze raz?</span>';
+        document.getElementById("alphabet").classList.add("no-grid");
+    }
 
     //loss
-    if (fail >= 9)
-        document.getElementById("alphabet").innerHTML = "Przegrana!<br/> Prawidłowe hasło to:<br/>" + password + '<br/><br/><span class="reset" onclick="location.reload()">Grasz jeszcze raz?</span>'
+    if (fail >= 9) {
+        document.getElementById("alphabet").innerHTML = "Przegrana!<br/> Prawidłowe hasło to:<br/>" + password + '<br/><br/><span class="reset" onclick="location.reload()">Grasz jeszcze raz?</span>';
+        document.getElementById("alphabet").classList.add("no-grid");
+    }
 }
